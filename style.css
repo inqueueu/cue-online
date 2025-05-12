@@ -1,0 +1,284 @@
+/* variables */
+:root {
+    --primary-root: #333333;
+    --secondary-root: #90badc;
+    --tertiary-root: #63a0e9;
+    --quaternary-root: #eaeaea;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.loadingScreen {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-root);
+    color: #333333;
+    overflow: hidden;
+}
+
+.desktop {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.icon {
+    width: 80px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.window {
+    display: none; /* Ensure all windows are hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    /* Ensure header is on top */
+    display: flex;
+    min-width: 350px;
+    max-width: 600px;
+    min-height: 200px;
+    max-height: 80vh;
+    /* Limit height to 80% of viewport */
+    height: auto;
+    border: 1px solid var(--tertiary);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Dynamic width based on content */
+    width: max-content;
+}
+
+.file1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.window-header {
+    background-color: var(--tertiary-root);
+    padding: 10px;
+    cursor: move;
+    /* Indicate draggable area */
+    user-select: none;
+    /* Prevent text selection while dragging */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    color: var(--quaternary);
+}
+
+.window-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    /* Allow vertical scrolling */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 10px;
+    flex-direction: row;
+    justify-content: baseline;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #333333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: var(--quaternary-root);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space between left and right sections */
+    padding: 0 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.taskbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.taskbar-items {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    /* Add spacing between START button and taskbar items */
+}
+
+.taskbar-item {
+    color: white;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: var(--secondary-root);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.taskbar-item:hover {
+    background: var(--tertiary-root)
+}
+
+button {
+    transition: all .3s ease-in-out;
+    color: var(--secondary-root);
+    background-color: white;
+    border: 2px solid #333333;
+    cursor: pointer;
+    padding: 0;
+    margin: 2px;
+}
+
+#footer-button {
+    font: #333;
+    font-size: 1rem;
+    padding: 0 10px;
+    border: 2px solid #333333;
+    color: #333;
+}
+
+footer#footer ul {
+    list-style: none;
+    display: flex;
+    padding: 0 5px;
+    margin: 0;
+}
+
+/* Dropup Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 8px;
+    font-size: 1rem;
+    border: none;
+    position: relative;
+    z-index: 1001;
+    /* Ensure it stays above the taskbar */
+    overflow: visible;
+    /* Prevent clipping */
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropup menu on click */
+.dropup .dropbtn:focus+.dropup-content {
+    display: block;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+.time {
+    color: #3498DB !important;
+    /* Force the color to blue */
+    font-size: 14px;
+    margin-right: 10px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* image tab */
+.image-window {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.image-window .window-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.displayed-image {
+    max-width: 100%;
+    max-height: calc(80vh - 60px);
+    /* Account for header and caption */
+    object-fit: contain;
+    padding: 10px;
+}
+
+.image-caption {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+/* Specific styling for File 1 */
+.about-window .window-content {
+    display: block; /* Ensure content flows as rows */
+    padding: 20px; /* Add padding for better readability */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.about-window p,
+.about-window ul {
+    margin-bottom: 15px; /* Add spacing between paragraphs and lists */
+}
