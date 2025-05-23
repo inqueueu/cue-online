@@ -41,6 +41,49 @@ function openWindow(id) {
     }
 }
 
+function openWindowWithPassword(id, password) {
+    // Show the password prompt modal
+    const passwordPrompt = document.getElementById('password-prompt');
+    passwordPrompt.style.display = 'flex'; // <-- This line is needed!
+    passwordPrompt.dataset.fileId = id;
+    passwordPrompt.dataset.password = password;
+
+    // Clear previous error and input
+    document.getElementById('password-error').textContent = '';
+    document.getElementById('password-input').value = '';
+}
+
+function submitPassword(id, correctPassword) {
+    const passwordInput = document.getElementById('password-input');
+    const enteredPassword = passwordInput.value;
+    const errorDiv = document.getElementById('password-error');
+    console.log('submitPassword called with:', id, correctPassword, enteredPassword);
+
+    if (enteredPassword === correctPassword) {
+        const windowElement = document.getElementById(id);
+        const contentElement = document.getElementById(`${id}-content`);
+        if (contentElement) contentElement.style.display = 'block';
+        if (windowElement) windowElement.style.display = 'flex';
+        closePasswordPrompt();
+    } else {
+        errorDiv.textContent = 'Incorrect, try again.';
+        passwordInput.value = '';
+        passwordInput.focus();
+    }
+}
+
+function closePasswordPrompt() {
+    // Hide the password prompt modal
+    const passwordPrompt = document.getElementById('password-prompt');
+    passwordPrompt.style.display = 'none';
+
+    // Clear the input field and error message
+    const passwordInput = document.getElementById('password-input');
+    passwordInput.value = '';
+    const errorDiv = document.getElementById('password-error');
+    errorDiv.textContent = '';
+}
+
 function closeWindow(id) {
     const windowElement = document.getElementById(id);
     if (windowElement) {
@@ -137,4 +180,13 @@ window.addEventListener('load', function () {
         loadingScreen.style.display = 'none';
     }, 2000); // 2000 milliseconds = 2 seconds
 });
+
+function submitPasswordFromPrompt() {
+        console.log('submitPasswordFromPrompt called');
+    const passwordPrompt = document.getElementById('password-prompt');
+    const id = passwordPrompt.dataset.fileId;
+    const correctPassword = passwordPrompt.dataset.password;
+    console.log('Trying to unlock:', id, 'with password:', correctPassword);
+    submitPassword(id, correctPassword);
+}
 

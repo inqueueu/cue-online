@@ -168,7 +168,7 @@
         </div>
 
 
-        <div class="icon" onclick="openWindow('file4')">
+        <div class="icon" onclick="openWindowWithPassword('file4', 'mypassword')">
             <img src="file-icon.png" alt="File">
             <p>File 4</p>
         </div>
@@ -179,8 +179,8 @@
                 <span>File 4</span>
                 <button class="close-btn" onclick="closeWindow('file4')">X</button>
             </div>
-            <div class="window-content">
-                <p>This is File 4 content.</p>
+            <div class="window-content" id="file4-content" style="display: none;">
+                <p>This is File 4 content. You have successfully unlocked it!</p>
             </div>
         </div>
     </div>
@@ -200,6 +200,16 @@
         </div>
         <div class="time">
             <span id="time"></span>
+        </div>
+    </div>
+
+    <!-- Password Prompt Modal -->
+    <div id="password-prompt" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Enter Password</h3>
+            <input type="password" id="password-input" placeholder="Enter password">
+            <button onclick="submitPassword('file4', 'mypassword')">Submit</button>
+            <button onclick="closePasswordPrompt()">Cancel</button>
         </div>
     </div>
 
