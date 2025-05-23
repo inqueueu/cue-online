@@ -56,8 +56,6 @@ function openWindowWithPassword(id, password) {
 function submitPassword(id, correctPassword) {
     const passwordInput = document.getElementById('password-input');
     const enteredPassword = passwordInput.value;
-    const errorDiv = document.getElementById('password-error');
-    console.log('submitPassword called with:', id, correctPassword, enteredPassword);
 
     if (enteredPassword === correctPassword) {
         const windowElement = document.getElementById(id);
@@ -66,7 +64,7 @@ function submitPassword(id, correctPassword) {
         if (windowElement) windowElement.style.display = 'flex';
         closePasswordPrompt();
     } else {
-        errorDiv.textContent = 'Incorrect, try again.';
+        alert('Incorrect password. Please try again.');
         passwordInput.value = '';
         passwordInput.focus();
     }
@@ -182,7 +180,7 @@ window.addEventListener('load', function () {
 });
 
 function submitPasswordFromPrompt() {
-        console.log('submitPasswordFromPrompt called');
+    
     const passwordPrompt = document.getElementById('password-prompt');
     const id = passwordPrompt.dataset.fileId;
     const correctPassword = passwordPrompt.dataset.password;

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Simulation</title>
+    <link rel="icon" type="image/x-icon" href="images/this-computer.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="loadingScreen">
+        <h1><img src="" alt="" />Loading</h1>
+    </div>
+
+
+    <div class="desktop">
+        <!-- Folder 1 Icon -->
+        <div class="icon" onclick="openWindow('folder1')">
+            <img src="images/folder_open.png" alt="Folder">
+            <p>Folder 1</p>
+        </div>
+
+        <!-- Image 1 Icon -->
+        <div class="icon" onclick="openWindow('image1')">
+            <img src="images/program.png" alt="Image File">
+            <p>Image 1</p>
+        </div>
+
+        <!-- Video 1 Icon -->
+        <div class="icon" onclick="openWindow('video1')">
+            <img src="images/text_file.png" alt="Video File">
+            <p>Video 1</p>
+        </div>
+
+        <!--folder 1-->
+        <div id="folder1" class="window">
+            <div class="window-header" data-drag-handle>
+                <span>Folder 1</span>
+                <button class="close-btn" onclick="closeWindow('folder1')">X</button>
+            </div>
+            <div class="window-content">
+                <!-- File 2 Icon in Folder 1 -->
+                <div class="icon" onclick="openWindow('file2')">
+                    <img src="images/text_file.png" alt="File">
+                    <p>File 2</p>
+                </div>
+
+                <!-- File 3 Icon in Folder 1 -->
+                <div class="file" onclick="openWindow('file3')">
+                    <div class="icon">
+                        <img src="images/text_file.png" alt="File">
+                        <p>File 3</p>
+                    </div>
+                </div>
+
+                <!-- File 4 Icon in Folder 1 -->
+                <div class="icon" onclick="openWindow('file4')">
+                    <img src="images/text_file.png" alt="File">
+                    <p>File 4</p>
+                </div>
+
+                <!-- File 5 Icon in Folder 1 -->
+                <div class="icon" onclick="openWindow('file5')">
+                    <img src="images/text_file.png" alt="File">
+                    <p>File 5</p>
+                </div>
+            </div>
+            <div class="window-content">
+            </div>
+        </div>
+
+        <!-- File 1 Icon -->
+        <div class="icon" onclick="openWindow('file1')">
+            <img src="images/text_file.png" alt="File">
+            <p>File 1</p>
+        </div>
+
+        <!-- File 1 Window -->
+        <div id="file1" class="window about-window">
+            <div class="window-header" data-drag-handle>
+                <span>about.txt</span>
+                <button class="close-btn" onclick="closeWindow('file1')">X</button>
+            </div>
+            <div class="window-content">
+                <h2>about the project</h2>
+                <p>
+                    Welcome to the Desktop Simulation project
+                </p>
+                <p>
+                    The project is open source, and was inspired by
+                    <a href="https://www.are.na/vaiva-staugaityte/websites-that-look-like-operating-systems">
+                        websites that look like operating systems</a>.
+                </p>
+                <p>
+                    <strong>Technologies Used:</strong>
+                </p>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                </ul>
+                <p>
+                    Thank you for checking out this project. Dont be afraid to explore!
+                </p>
+            </div>
+        </div>
+
+        <!--Image 1-->
+        <div id="image1" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>image.jpg</span>
+                <button class="close-btn" onclick="closeWindow('image1')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/imagetest.jpg" alt="an image" class="displayed-image">
+                <p class="image-caption">hello world</p>
+            </div>
+        </div>
+
+
+        <!--video 1-->
+        <div id="video1" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>image.jpg</span>
+                <button class="close-btn" onclick="closeWindow('video1')">X</button>
+            </div>
+            <div class="window-content">
+                <video controls class="displayed-image" autoplay>
+                    <source src="video-test.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    <p class="image-caption">hello world</p>
+                </video>
+            </div>
+        </div>
+
+        <!-- File 2-->
+        <div id="file2" class="window">
+            <div class="window-header" data-drag-handle>
+                <span>File 2</span>
+                <button class="close-btn" onclick="closeWindow('file2')">X</button>
+            </div>
+            <div class="window-content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque similique quo rem ad ullam.
+                    Fugit modi nemo vitae, repellendus dicta beatae at omnis, nisi delectus optio nostrum! Magni,
+                    eligendi.
+                    Fugiat fugit, delectus excepturi tempore aperiam vero ad expedita id minus nostrum impedit
+                    provident? Eveniet ullam delectus, repellat facere, recusandae ad sapiente quas at hic enim dolore,
+                    veniam nihil neque?
+                    Sed eos suscipit voluptatem amet non qui reiciendis temporibus magnam delectus culpa neque ducimus
+                    aut nisi, repellendus repellat? Consequatur accusamus sit eum fugit. Itaque nesciunt dolore ipsam
+                    iste, doloremque cumque!
+                    Adipisci harum nesciunt exercitationem voluptas magnam corporis sed ex fugit eaque ad nobis non
+                    obcaecati dolore, cum maxime cupiditate doloremque quod. Cupiditate, sapiente assumenda perspiciatis
+                    eligendi facere amet qui! Magnam.
+                    Saepe dolor dolorem omnis, aperiam architecto perspiciatis nisi nemo. Doloremque soluta distinctio
+                    quidem voluptate laboriosam officia omnis fuga voluptatibus esse est quas minus, facilis tempore
+                    adipisci iste? Commodi, itaque velit.
+                    <br><br><br>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi magnam labore totam est sunt
+                    tenetur maxime placeat laborum ex porro! Mollitia ducimus tempore enim nihil similique cum ea, illum
+                    omnis?
+                    Laudantium, vitae tempore. Rerum minus nisi possimus fuga optio in doloremque. Perspiciatis,
+                    similique? Quod voluptas similique, soluta obcaecati quam consequuntur magnam, placeat nihil non
+                    esse veniam iste quisquam dignissimos beatae.
+                </p>
+            </div>
+        </div>
+
+        <!--file 3-->
+        <div id="file3" class="window">
+            <div class="window-header" data-drag-handle>
+                <span>File 3</span>
+                <button class="close-btn" onclick="closeWindow('file3')">X</button>
+            </div>
+            <div class="window-content">
+                <p>This is File 3 content.</p>
+            </div>
+        </div>
+
+
+        <div class="icon" onclick="openWindowWithPassword('file4', 'mypassword')">
+            <img src="images/text_file.png" alt="File">
+            <p>File 4</p>
+        </div>
+
+        <!-- File 4 Window -->
+        <div id="file4" class="window">
+            <div class="window-header" data-drag-handle>
+                <span>File 4</span>
+                <button class="close-btn" onclick="closeWindow('file4')">X</button>
+            </div>
+            <div class="window-content" id="file4-content" style="display: none;">
+                <p>This is File 4 content. You have successfully unlocked it!</p>
+            </div>
+        </div>
+    </div>
+    <div class="taskbar" id="taskbar">
+        <div class="taskbar-left">
+            <div class="dropup">
+                <button class="dropbtn">START</button>
+                <div class="dropup-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <div class="taskbar-items">
+                <!--taskbar items here-->
+            </div>
+        </div>
+        <div class="time">
+            <span id="time"></span>
+        </div>
+    </div>
+
+    <!-- Password Prompt Modal -->
+    <div id="password-prompt" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Enter Password</h3>
+            <input type="password" id="password-input" placeholder="Enter password">
+            <button onclick="submitPassword('file4', 'mypassword')">Submit</button>
+            <button onclick="closePasswordPrompt()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
