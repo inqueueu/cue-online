@@ -54,6 +54,11 @@ function openWindow(id) {
     }
 }
 
+function openWindow(id) {
+    document.getElementById(id).style.display = 'block';
+    // Optionally bring to front, etc.
+}
+
 function openWindowWithPassword(id, password) {
     // Show the password prompt modal
     const passwordPrompt = document.getElementById('password-prompt');

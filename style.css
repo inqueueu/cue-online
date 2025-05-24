@@ -221,118 +221,129 @@ footer#footer ul {
 .dropbtn {
     background-color: #3498DB;
     color: white;
-    padding: 10px 18px;
+    padding: 8px;
     font-size: 1rem;
     border: none;
-    border-radius: 8px 8px 0 0;
-    cursor: pointer;
-    margin-bottom: 0;
     position: relative;
     z-index: 1001;
+    /* Ensure it stays above the taskbar */
     overflow: visible;
-    font-family: inherit;
+    /* Prevent clipping */
 }
 
-/* Main dropup container */
 .dropup {
     position: relative;
     display: inline-block;
 }
 
-/* Main dropup menu (Start menu) */
 .dropup-content {
-    display: none;
+display: none;
     position: absolute;
+    background-color: #fff;
+    color: #222;
+    min-width: 160px;
+    z-index: 2000; /* Increased to be above the taskbar */
     left: 0;
     bottom: 100%;
-    background: #fff;
-    color: #222;
-    min-width: 340px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border: 1px solid #eaeaea;
-    z-index: 2002;
-    flex-direction: row;
-    align-items: stretch;
-    padding: 0;
 }
 
-/* Show menu on hover or when .open is added (for JS toggle) */
-.dropup.open > .dropup-content,
 .dropup:hover > .dropup-content,
 .dropup:focus-within > .dropup-content {
-    display: flex;
+    display: block;
 }
 
-/* Vertical header column */
-.vertical-header {
-    width: 48px;
-    min-width: 48px;
-    background: var(--secondary-root, #e75480);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid #eaeaea;
+.dropup.submenu {
+    position: relative;
+    display: block;
 }
 
-.vertical-header span {
-    transform: rotate(-90deg);
-    font-family: monospace;
-    font-size: 1.1em;
-    font-weight: bold;
-    letter-spacing: 2px;
-    white-space: nowrap;
+.dropup.submenu > .dropup-content {
+    left: 100%;
+    top: -2em;
+    bottom: auto;
+    margin-left: 2px;
+    z-index: 5000; /* Also ensure submenus are above the taskbar */
 }
 
-/* Items column */
-.dropup-items {
-    display: flex;
-    flex-direction: column;
-    padding: 8px 0;
-    min-width: 200px;
-}
-
-/* Menu items styling */
 .dropup-content a, .dropup-content .dropbtn {
     display: block;
-    padding: 10px 18px;
+    padding: 8px 16px;
     text-decoration: none;
     background: none;
     border: none;
     width: 100%;
     text-align: left;
     cursor: pointer;
-    color: #222;
+    color: #222;                /* Ensure text is dark */
     font-family: inherit;
     font-size: 1em;
 }
 
 .dropup-content a:hover, .dropup-content .dropbtn:hover {
     background: #eaeaea;
-    color: var(--secondary-root, #e75480);
+    color: var(--secondary-root); /* Optional: highlight on hover */
 }
 
-/* Submenu container */
-.dropup.submenu {
-    position: relative;
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
 }
 
-/* Submenu content (hidden by default, shown on hover/focus) */
-.dropup.submenu > .dropup-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    bottom: auto;
-    margin-left: 2px;
-    z-index: 5000;
-    min-width: 180px;
-    flex-direction: column;
-}
-
-.dropup.submenu:hover > .dropup-content,
-.dropup.submenu:focus-within > .dropup-content {
+.time {
+    color: #3498DB !important;
+    /* Force the color to blue */
+    font-size: 14px;
+    margin-right: 10px;
+    text-align: right;
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* image tab */
+.image-window {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.image-window .window-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.displayed-image {
+    max-width: 100%;
+    max-height: calc(80vh - 60px);
+    /* Account for header and caption */
+    object-fit: contain;
+    padding: 10px;
+}
+
+.image-caption {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
+
+/* Specific styling for File 1 */
+.about-window .window-content {
+    display: block;
+    padding: 18px 24px 24px 24px; /* Less top padding, keep sides/bottom comfy */
+    overflow-y: auto;
+}
+
+.about-window p,
+.about-window ul {
+    margin-bottom: 15px; /* Add spacing between paragraphs and lists */
 }
 
 .file-window .window-content {
@@ -422,9 +433,8 @@ audio {
     margin-bottom: 12px;
 }
 #playlist-audio {
-    width: 90%;
-    border-radius: 12px;
-    background: #ffe4f3;
+    width: 100%;
+    margin-bottom: 12px;
 }
 #playlist {
     margin-top: 16px;
@@ -464,6 +474,14 @@ audio {
     margin-top: 10px;
     color: #e75480;
     font-weight: bold;
+}
+
+.music-visualizer {
+    width: auto;
+    height: 200px; /* or adjust as you like */
+    object-fit: cover;
+    margin-bottom: 12px;
+    display: block;
 }
 
 .tabs {

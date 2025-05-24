@@ -218,7 +218,7 @@
             </div>
             <div class="window-content">
                 <video controls class="displayed-image" autoplay>
-                    <source src="video-test.mp4" type="video/mp4">
+                    <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                     <p class="image-caption">hello world</p>
                 </video>
@@ -238,7 +238,7 @@
                 <button class="close-btn" onclick="closeWindow('music')">X</button>
             </div>
             <div class="window-content">
-                <img src="images/music.png" alt="Music">
+                <video class="music-visualizer" src="videos/music-visualizer.mp4" autoplay loop muted playsinline></video>
                 <audio id="playlist-audio" controls>
                     <source src="music/song1.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
@@ -247,16 +247,16 @@
                     <p>Playlist</p>
                     <ul>
                         <li>
-                            <button onclick="playSong('music/song1.mp3', 'Song One')">▶</button>
-                            Song One
+                            <button onclick="playSong('music/Woaini.mp3', 'Cody Lee')">▶</button>
+                            I Love You by Cody Lee
                         </li>
                         <li>
-                            <button onclick="playSong('music/song2.mp3', 'Song Two')">▶</button>
-                            Song Two
+                            <button onclick="playSong('music/Hyperventilation.mp3', 'RADWIMPS')">▶</button>
+                            Hyperventilation by RADWIMPS
                         </li>
                         <li>
-                            <button onclick="playSong('music/song3.mp3', 'Song Three')">▶</button>
-                            Song Three
+                            <button onclick="playSong('music/Multo.mp3', 'Cup of Joe')">▶</button>
+                            Multo by Cup of Joe
                         </li>
                     </ul>
                 </div>
