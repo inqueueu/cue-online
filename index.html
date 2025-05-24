@@ -85,26 +85,38 @@
                 <button class="close-btn" onclick="closeWindow('file1')">X</button>
             </div>
             <div class="window-content">
-                <h2>welcome to my desktop.</h2>
-                <p>
-
-                </p>
-                <p>
-                    The project is open source, and was inspired by
-                    <a href="https://www.are.na/vaiva-staugaityte/websites-that-look-like-operating-systems">
-                        websites that look like operating systems</a>.
-                </p>
-                <p>
-                    <strong>Technologies Used:</strong>
-                </p>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript (ES6+)</li>
-                </ul>
-                <p>
-                    Thank you for checking out this project. Dont be afraid to explore!
-                </p>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showAboutTab('about-this')">About This</button>
+                    <button class="tab-btn" onclick="showAboutTab('about-me')">About Me</button>
+                </div>
+                <div id="about-this" class="tab-content" style="display: block;">
+                    <h2>About This Project</h2>
+                    <p>
+                        The project is open source, and was inspired by
+                        <a href="https://www.are.na/vaiva-staugaityte/websites-that-look-like-operating-systems">
+                            websites that look like operating systems</a>.
+                    </p>
+                    <p>
+                        <strong>Technologies Used:</strong>
+                    </p>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                    </ul>
+                    <p>
+                        Thank you for checking out this project. Don't be afraid to explore!
+                    </p>
+                </div>
+                <div id="about-me" class="tab-content" style="display: none;">
+                    <h2>About Me</h2>
+                    <p>
+                        Hi! I'm [Your Name], a creative coder and digital explorer. I love making playful, interactive things on the web and learning new ways to express myself through technology and art.
+                    </p>
+                    <p>
+                        When I'm not coding, you might find me drawing, taking photos, or listening to music. I value curiosity, kindness, and a sense of wonder.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -252,15 +264,86 @@
             </div>
         </div>
 
+        <!-- In a window-content for a text file -->
+        <div id="todo.txt" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>todo.txt</span>
+                <button class="close-btn" onclick="closeWindow('todo.txt')">X</button>
+            </div>
+            <div class="window-content">
+                <h2>todo.txt</h2>
+                <ul>
+                    <li>Finish self-representation project</li>
+                    <li>Call grandma</li>
+                    <li>Find that cool font again</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="icon" onclick="openWindow('todo.txt')">
+    <img src="images/text_file.png" alt="todo">
+    <p>todo.txt</p>
+</div>
+
+        <!-- Hidden Note Icon -->
+        <div class="icon" onclick="openWindow('hidden_note')" style="opacity:0.1; position:absolute; top:80vh;">
+    <img src="images/text_file.png" alt="Hidden">
+    <p>.hidden_note</p>
+</div>
+
+        <!-- In a window-content for a hidden file -->
+        <div id="hidden_note" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>.hidden_note</span>
+                <button class="close-btn" onclick="closeWindow('hidden_note')">X</button>
+            </div>
+            <div class="window-content">
+                <h2>.hidden_note</h2>
+                <p>
+                    If you found this, you’re as curious as I am! 🌱
+                </p>
+            </div>
+        </div>
+
     </div>
     <div class="taskbar" id="taskbar">
         <div class="taskbar-left">
             <div class="dropup">
                 <button class="dropbtn">START</button>
                 <div class="dropup-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <div class="dropup submenu">
+                        <button class="dropbtn">Contact ▸</button>
+                        <div class="dropup-content">
+                            <a href="mailto:your@email.com">Email</a>
+                            <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+                            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="dropup submenu">
+                        <button class="dropbtn">Favorite Media ▸</button>
+                        <div class="dropup-content">
+                            <a href="https://open.spotify.com/" target="_blank">Spotify Playlist</a>
+                            <a href="https://letterboxd.com/" target="_blank">Letterboxd</a>
+                            <a href="#">Book: "The Little Prince"</a>
+                        </div>
+                    </div>
+                    <div class="dropup submenu">
+                        <button class="dropbtn">Interests ▸</button>
+                        <div class="dropup-content">
+                            <a href="#">Web Art</a>
+                            <a href="#">Photography</a>
+                            <a href="#">Retro Tech</a>
+                            <a href="#">Drawing</a>
+                        </div>
+                    </div>
+                    <div class="dropup submenu">
+                        <button class="dropbtn">Thinking About ▸</button>
+                        <div class="dropup-content">
+                            <a href="#">How to make websites feel alive</a>
+                            <a href="#">What makes a memory stick?</a>
+                            <a href="#">Why cats are so mysterious</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="taskbar-items">

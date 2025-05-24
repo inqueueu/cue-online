@@ -216,3 +216,45 @@ function playSong(src, title) {
     audio.play();
     document.getElementById('now-playing').textContent = 'Now Playing: ' + title + ' 🎵';
 }
+
+function showAboutTab(tabId) {
+    // Hide all tab contents
+    document.querySelectorAll('#file1 .tab-content').forEach(tab => {
+        tab.style.display = 'none';
+    });
+    // Remove active class from all buttons
+    document.querySelectorAll('#file1 .tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Show selected tab and set button active
+    document.getElementById(tabId).style.display = 'block';
+    const btnIndex = tabId === 'about-this' ? 0 : 1;
+    document.querySelectorAll('#file1 .tab-btn')[btnIndex].classList.add('active');
+}
+
+function toggleStartMenu() {
+    const menu = document.getElementById('startMenu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    // Optional: close menu if you click outside
+    document.addEventListener('click', function handler(e) {
+        if (!menu.contains(e.target) && !e.target.classList.contains('dropbtn')) {
+            menu.style.display = 'none';
+            document.removeEventListener('click', handler);
+        }
+    });
+}
+
+document.getElementById('startBtn').addEventListener('click', function(e) {
+    e.stopPropagation();
+    const dropup = this.parentElement;
+    dropup.classList.toggle('open');
+});
+
+// Optional: close menu when clicking outside
+document.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropup.open').forEach(dropup => {
+        if (!dropup.contains(e.target)) {
+            dropup.classList.remove('open');
+        }
+    });
+});
