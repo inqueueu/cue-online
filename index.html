@@ -72,22 +72,22 @@
             </div>
         </div>
 
-        <!-- File 1 Icon -->
+        <!-- About Icon -->
         <div class="icon" onclick="openWindow('file1')">
-            <img src="images/text_file.png" alt="File">
-            <p>File 1</p>
+            <img src="images/this-computer.png" alt="File">
+            <p>About</p>
         </div>
 
-        <!-- File 1 Window -->
+        <!-- About Window -->
         <div id="file1" class="window about-window">
             <div class="window-header" data-drag-handle>
                 <span>about.txt</span>
                 <button class="close-btn" onclick="closeWindow('file1')">X</button>
             </div>
             <div class="window-content">
-                <h2>about the project</h2>
+                <h2>welcome to my desktop.</h2>
                 <p>
-                    Welcome to the Desktop Simulation project
+
                 </p>
                 <p>
                     The project is open source, and was inspired by
@@ -108,15 +108,92 @@
             </div>
         </div>
 
-        <!--Image 1-->
+        <!-- File 2 Window -->
+        <div id="file2" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>File 2</span>
+                <button class="close-btn" onclick="closeWindow('file2')">X</button>
+            </div>
+            <div class="window-content">
+                <h2>Who Am I?</h2>
+                <p>
+                    I'm a creative explorer, always curious about how things work and how stories can be told through technology. I love blending art and code to make playful, meaningful experiences.
+                </p>
+                <p>
+                    My favorite hobbies include digital drawing, photography, and tinkering with web projects like this one!
+                </p>
+            </div>
+        </div>
+
+        <!-- File 3 Window -->
+        <div id="file3" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>File 3</span>
+                <button class="close-btn" onclick="closeWindow('file3')">X</button>
+            </div>
+            <div class="window-content">
+                <h2>My Values</h2>
+                <ul>
+                    <li>Curiosity: Always learning, always asking questions.</li>
+                    <li>Creativity: Finding new ways to express myself.</li>
+                    <li>Empathy: Listening and caring about others' stories.</li>
+                    <li>Resilience: Bouncing back and growing from challenges.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- File 4 Icon (Password Protected) -->
+        <div class="icon" onclick="openWindowWithPassword('file4', 'mypassword')">
+            <img src="images/folder_closed.png" alt="File">
+            <p>File 4</p>
+        </div>
+
+        <!-- File 4 Window (Password Protected) -->
+        <div id="file4" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>File 4</span>
+                <button class="close-btn" onclick="closeWindow('file4')">X</button>
+            </div>
+            <div class="window-content" id="file4-content" style="display: none;">
+                <h2>Secret??</h2>
+                <p>
+                    
+                </p>
+                <p>
+                    (You found the secret!)
+                </p>
+            </div>
+        </div>
+
+        <!-- File 5 Window -->
+        <div id="file5" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>File 5</span>
+                <button class="close-btn" onclick="closeWindow('file5')">X</button>
+            </div>
+            <div class="window-content">
+                <h2>Fun Facts</h2>
+                <ul>
+                    <li>I collect interesting fonts and textures.</li>
+                    <li>I love rainy days and cozy playlists.</li>
+                    <li>My favorite programming language is JavaScript (for now!).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Example: Image Folder Window -->
         <div id="image1" class="window image-window">
             <div class="window-header" data-drag-handle>
                 <span>image.jpg</span>
                 <button class="close-btn" onclick="closeWindow('image1')">X</button>
             </div>
             <div class="window-content">
-                <img src="images/imagetest.jpg" alt="an image" class="displayed-image">
-                <p class="image-caption">hello world</p>
+                <img src="images/imagetest.jpg" alt="A self-portrait" class="displayed-image">
+                <p class="image-caption">A self-portrait I made last year.</p>
+                <img src="images/photo2.jpg" alt="Favorite place" class="displayed-image">
+                <p class="image-caption">My favorite place to relax.</p>
+                <img src="images/photo3.jpg" alt="With friends" class="displayed-image">
+                <p class="image-caption">A memory with friends.</p>
             </div>
         </div>
 
@@ -136,66 +213,45 @@
             </div>
         </div>
 
-        <!-- File 2-->
-        <div id="file2" class="window">
+        <!-- Music Player Icon -->
+        <div class="icon" onclick="openWindow('music')">
+            <img src="images/music.png" alt="Music">
+            <p>Music</p>
+        </div>
+
+        <!-- Playlist Music Player Window -->
+        <div id="music" class="window">
             <div class="window-header" data-drag-handle>
-                <span>File 2</span>
-                <button class="close-btn" onclick="closeWindow('file2')">X</button>
+                <span>recent faves!</span>
+                <button class="close-btn" onclick="closeWindow('music')">X</button>
             </div>
             <div class="window-content">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque similique quo rem ad ullam.
-                    Fugit modi nemo vitae, repellendus dicta beatae at omnis, nisi delectus optio nostrum! Magni,
-                    eligendi.
-                    Fugiat fugit, delectus excepturi tempore aperiam vero ad expedita id minus nostrum impedit
-                    provident? Eveniet ullam delectus, repellat facere, recusandae ad sapiente quas at hic enim dolore,
-                    veniam nihil neque?
-                    Sed eos suscipit voluptatem amet non qui reiciendis temporibus magnam delectus culpa neque ducimus
-                    aut nisi, repellendus repellat? Consequatur accusamus sit eum fugit. Itaque nesciunt dolore ipsam
-                    iste, doloremque cumque!
-                    Adipisci harum nesciunt exercitationem voluptas magnam corporis sed ex fugit eaque ad nobis non
-                    obcaecati dolore, cum maxime cupiditate doloremque quod. Cupiditate, sapiente assumenda perspiciatis
-                    eligendi facere amet qui! Magnam.
-                    Saepe dolor dolorem omnis, aperiam architecto perspiciatis nisi nemo. Doloremque soluta distinctio
-                    quidem voluptate laboriosam officia omnis fuga voluptatibus esse est quas minus, facilis tempore
-                    adipisci iste? Commodi, itaque velit.
-                    <br><br><br>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi magnam labore totam est sunt
-                    tenetur maxime placeat laborum ex porro! Mollitia ducimus tempore enim nihil similique cum ea, illum
-                    omnis?
-                    Laudantium, vitae tempore. Rerum minus nisi possimus fuga optio in doloremque. Perspiciatis,
-                    similique? Quod voluptas similique, soluta obcaecati quam consequuntur magnam, placeat nihil non
-                    esse veniam iste quisquam dignissimos beatae.
-                </p>
+                <img src="images/music.png" alt="Music">
+                <audio id="playlist-audio" controls>
+                    <source src="music/song1.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="playlist">
+                    <p>Playlist</p>
+                    <ul>
+                        <li>
+                            <button onclick="playSong('music/song1.mp3', 'Song One')">▶</button>
+                            Song One
+                        </li>
+                        <li>
+                            <button onclick="playSong('music/song2.mp3', 'Song Two')">▶</button>
+                            Song Two
+                        </li>
+                        <li>
+                            <button onclick="playSong('music/song3.mp3', 'Song Three')">▶</button>
+                            Song Three
+                        </li>
+                    </ul>
+                </div>
+                <p id="now-playing">Now Playing: Song One 🎵</p>
             </div>
         </div>
 
-        <!--file 3-->
-        <div id="file3" class="window">
-            <div class="window-header" data-drag-handle>
-                <span>File 3</span>
-                <button class="close-btn" onclick="closeWindow('file3')">X</button>
-            </div>
-            <div class="window-content">
-                <p>This is File 3 content.</p>
-            </div>
-        </div>
-
-
-        <div class="icon" onclick="openWindowWithPassword('file4', 'mypassword')">
-            <img src="images/text_file.png" alt="File">
-            <p>File 4</p>
-        </div>
-
-        <!-- File 4 Window -->
-        <div id="file4" class="window">
-            <div class="window-header" data-drag-handle>
-                <span>File 4</span>
-                <button class="close-btn" onclick="closeWindow('file4')">X</button>
-            </div>
-            <div class="window-content" id="file4-content" style="display: none;">
-                <p>This is File 4 content. You have successfully unlocked it!</p>
-            </div>
-        </div>
     </div>
     <div class="taskbar" id="taskbar">
         <div class="taskbar-left">

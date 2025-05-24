@@ -6,7 +6,20 @@ const openFiles = new Set();
 
 function openWindow(id) {
     const windowElement = document.getElementById(id);
-    if (!windowElement) return; // Ensure the element exists
+    if (!windowElement) return;
+
+    // Only set position if the window is not already visible
+    if (windowElement.style.display !== 'flex') {
+        // Get viewport size
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        // Set random position, keeping the window inside the viewport
+        const left = Math.floor(Math.random() * (vw - 400)); // 400 = approx window width
+        const top = Math.floor(Math.random() * (vh - 300));  // 300 = approx window height
+        windowElement.style.left = left + 'px';
+        windowElement.style.top = top + 'px';
+    }
+
     windowElement.style.display = 'flex';
 
     // Add the file to the openFiles set
@@ -86,6 +99,13 @@ function closeWindow(id) {
     const windowElement = document.getElementById(id);
     if (windowElement) {
         windowElement.style.display = 'none';
+        // Reset size to original
+        windowElement.style.width = '';
+        windowElement.style.height = '';
+        windowElement.style.minWidth = '';
+        windowElement.style.maxWidth = '';
+        windowElement.style.minHeight = '';
+        windowElement.style.maxHeight = '';
     }
 
     // Remove the file from the openFiles set
@@ -188,3 +208,11 @@ function submitPasswordFromPrompt() {
     submitPassword(id, correctPassword);
 }
 
+function playSong(src, title) {
+    var audio = document.getElementById('playlist-audio');
+    var source = audio.querySelector('source');
+    source.src = src;
+    audio.load();
+    audio.play();
+    document.getElementById('now-playing').textContent = 'Now Playing: ' + title + ' 🎵';
+}

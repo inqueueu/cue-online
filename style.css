@@ -1,8 +1,8 @@
 /* variables */
 :root {
     --primary-root: #333333;
-    --secondary-root: #90badc;
-    --tertiary-root: #63a0e9;
+    --secondary-root: #1771bb;
+    --tertiary-root: #116cda;
     --quaternary-root: #eaeaea;
 }
 
@@ -25,7 +25,8 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family:monospace;
+    font-size: 16px;
     background-color: var(--secondary-root);
     color: #333333;
     overflow: hidden;
@@ -35,6 +36,7 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
+    background-image: url;
 }
 
 .icon {
@@ -47,6 +49,18 @@ body {
 .icon img {
     width: 50px;
     height: 50px;
+}
+
+.window-header span {
+    color: #fff;
+}
+
+.window-content {
+    color: #333333;
+}
+
+.desktop > .icon p {
+    color: #fff;
 }
 
 .window {
@@ -69,8 +83,31 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* Dynamic width based on content */
     width: max-content;
+    resize: both;
+    overflow: auto;
 }
 
+/* Pink, boxy scrollbar for Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 14px;
+    background: #ffe4f3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary-root);
+    border-radius: 0; /* boxy */
+    border: 3px solid #ffe4f3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff69b4;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--tertiary-root) #ffe4f3;
+}
 .file1 {
     display: flex;
     flex-direction: column;
@@ -105,9 +142,13 @@ body {
 .close-btn {
     background: none;
     border: none;
-    color: #333333;
+    color: var(--quaternary-root);
     font-size: 16px;
     cursor: pointer;
+}
+
+.close-btn:hover{
+    color: var(--secondary-root);
 }
 
 .taskbar {
@@ -273,14 +314,25 @@ li {
 
 /* Specific styling for File 1 */
 .about-window .window-content {
-    display: block; /* Ensure content flows as rows */
-    padding: 20px; /* Add padding for better readability */
-    overflow-y: auto; /* Allow scrolling if content overflows */
+    display: block;
+    padding: 40px 32px; /* More space: 40px top/bottom, 32px left/right */
+    overflow-y: auto;
 }
 
 .about-window p,
 .about-window ul {
     margin-bottom: 15px; /* Add spacing between paragraphs and lists */
+}
+
+.file-window .window-content {
+    display: block;
+    padding: 40px 32px;
+    overflow-y: auto;
+}
+
+.file-window p,
+.file-window ul {
+    margin-bottom: 15px;
 }
 
 .modal {
@@ -326,4 +378,79 @@ li {
 
 .modal-content button:hover {
     background-color: #ddd;
+}
+
+.resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    cursor: se-resize;
+    background: transparent;
+    z-index: 10;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #ffe4f3;
+    border-radius: 12px;
+}
+audio {
+    outline: none;
+}
+
+/* Music player styles */
+#music .window-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+}
+#music .window-content img {
+    width: 60px;
+    margin-bottom: 12px;
+}
+#playlist-audio {
+    width: 90%;
+    border-radius: 12px;
+    background: #ffe4f3;
+}
+#playlist {
+    margin-top: 16px;
+    width: 90%;
+}
+#playlist p {
+    color: #e75480;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+#playlist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#playlist button {
+    background: none;
+    border: none;
+    color: #e75480;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#playlist li {
+    padding: 8px;
+    background: #ffe4f3;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+#playlist li:hover {
+    background: #ff69b4;
+}
+#now-playing {
+    margin-top: 10px;
+    color: #e75480;
+    font-weight: bold;
 }
