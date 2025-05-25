@@ -25,13 +25,14 @@
         <!-- Memories Folder Icon -->
         <div class="icon" onclick="openWindow('memories-folder')">
             <img src="images/folder_open.png" alt="Memories Folder">
-            <p>Memories</p>
+            <p>proof_i_was
+            _here</p>
         </div>
         <!-- Image 1 Icon -->
-        <div class="icon" onclick="openWindow('image1')">
+        <!--<div class="icon" onclick="openWindow('image1')">
             <img src="images/program.png" alt="Image File">
             <p>Image 1</p>
-        </div>
+        </div>-->
         
 
         <!-- Art Folder Window -->
@@ -76,32 +77,39 @@
         <!-- Memories Folder Window -->
         <div id="memories-folder" class="window file-window">
             <div class="window-header" data-drag-handle>
-                <span>Memories</span>
+                <span>proof_i_was_here</span>
                 <button class="close-btn" onclick="closeWindow('memories-folder')">X</button>
             </div>
             <div class="window-content">
                 <div class="memories-gallery">
                     <div class="memory-thumb" onclick="openMemory('memory1')">
                         <img src="images/memory1.jpg" alt="Memory 1">
-                        <p>A day at the park</p>
+                        <p>20250312.png</p>
                     </div>
                     <div class="memory-thumb" onclick="openMemory('memory2')">
                         <img src="images/memory2.jpg" alt="Memory 2">
-                        <p>Graduation</p>
+                        <p>20241113.png</p>
                     </div>
                     <div class="memory-thumb" onclick="openMemory('memory3')">
                         <img src="images/memory3.jpg" alt="Memory 3">
-                        <p>Family trip</p>
+                        <p>20250315.png</p>
                     </div>
                     <div class="memory-thumb" onclick="openMemory('memory4')">
                         <img src="images/memory4.jpg" alt="Memory 4">
-                        <p>Yummy Food</p>
+                        <p>20250123.png</p>
                     </div>
                     <div class="memory-thumb" onclick="openMemory('memory5')">
                         <img src="images/memory5.jpg" alt="Memory 5">
-                        <p>Yummy Food</p>
+                        <p>20240917.png</p>
                     </div>
-                    <!-- Add more memories as needed -->
+                    <div class="memory-thumb" onclick="openMemory('memory6')">
+                        <img src="images/memory6.jpg" alt="Memory 6">
+                        <p>20090703.png</p>
+                    </div>
+                    <div class="memory-thumb" onclick="openMemory('memory7')">
+                        <img src="images/memory7.jpg" alt="Memory 7">
+                        <p>Cozy night in</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,6 +146,7 @@
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
+                        <li>icons are by @aconfuseddragon on itch.io</li>
                     </ul>
                     <p>
                         Thank you for checking out this project.
@@ -153,8 +162,6 @@
                     <p>
                         When I'm not drawing, you might find me doing side quests, playing games, attempt to code or
                         taking a nap. I admire curiosity, and kindess in others- people who care deeply, whether about ideas, art, or the world around them.
-                        What matters most to me isn’t that we agree on everything, but that we’re both willing to learn, share passions, and put genuine effort into
-                        the things (and people) we love.
                     </p>
                 </div>
             </div>
@@ -162,25 +169,28 @@
 
 
         <!-- File 4 Icon (Password Protected) -->
-        <div class="icon" onclick="openWindowWithPassword('file4', 'mypassword')">
+        <div class="icon" onclick="openWindowWithPassword('file4', 'July2004')">
             <img src="images/folder_closed.png" alt="File">
-            <p>File 4</p>
+            <p>secret.txt</p>
         </div>
 
         <!-- File 4 Window (Password Protected) -->
         <div id="file4" class="window file-window">
             <div class="window-header" data-drag-handle>
-                <span>File 4</span>
+                <span>secret.txt</span>
                 <button class="close-btn" onclick="closeWindow('file4')">X</button>
             </div>
             <div class="window-content" id="file4-content" style="display: none;">
-                <h2>Secret??</h2>
+                <h2>congrats!</h2>
                 <p>
 
                 </p>
                 <p>
-                    (You found the secret!)
+                    (you found the secret!) i dont actually have a secret im willing to part with, but i wanted to add a password protected 
+                    file to this project. i think it adds a bit of mystery, and i like the idea of having a secret, and looking mysterious. 
                 </p>
+                <p>have a pic of my favorite cat, i take a picture of her whenever i see her, she's always sleeping</p>
+                <img src="images/secret.jpg" alt="hermeowjesty">
             </div>
         </div>
 
@@ -255,6 +265,9 @@
                         <li><button onclick="playSong('music/Color Your Night.mp3', 'Lotus Juice')">▶</button>
                             Color Your Night by Lotus Juice
                         </li>
+                            <li><button onclick="playSong('music/No More What Ifs.mp3', 'Lyn')">▶</button>
+                            No More What Ifs by Lyn
+                        </li>
                     </ul>
                 </div>
                 <p id="now-playing">Now Playing: Silence </p>
@@ -268,12 +281,57 @@
                 <button class="close-btn" onclick="closeWindow('notes.txt')">X</button>
             </div>
             <div class="window-content">
-                <h2>notes.txt</h2>
-                <ul>
-                    <li>Finish self-representation project</li>
-                    <li>Call grandma</li>
-                    <li>Find that cool font again</li>
-                </ul>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showNotesTab('notes-main')">Notes</button>
+                    <button class="tab-btn" onclick="showNotesTab('notes-docs')">Documentation</button>
+                </div>
+                <div id="notes-main" class="tab-content" style="display: block;">
+                    <!-- Your existing notes content here -->
+                    <h2>12 May 2025 at 12.34</h2> <br>
+                    <p>Japanese Curry</p>
+                    <ul> to buy
+                        <li>carrots</li>
+                        <li>potatoes</li>
+                        <li>chickin</li>
+                        <li>curry golden</li>
+                        <li>apple</li>
+                        <li>choco</li>
+                    </ul>
+                    <p>app at 2.45pm 16th june</p>
+                    <br><br><br>
+                    <p>things to do:</p>
+                    <ul>
+                        <li>Finish coding this project</li>
+                        <li>finish art</li>
+                        <li>buy new phone case</li> <br>
+                        <p>password hint: my birthday month + year</p>
+
+                </div>
+                <div id="notes-docs" class="tab-content" style="display: none;">
+                    <h2>Project Documentation</h2> 
+                    <br>
+                    <ul>
+                        <li>12/05 - Started project structure with HTML, CSS, and basic JS</li>
+                        <li>20 /05 - Figuring out events, password, adjusting windows</li>
+                        <li>23/05 - Changed icons, stylised desktop a bit</li>
+                        <li>24/05 - Added dropup menu + submenus content, music player</li>
+                        <li>25/05 - Added recycle bin, fixed music, code structure, added memories</li>
+                    </ul>
+                    <p>See <a href="https://github.com/inqueueu/cue-online" target="_blank">GitHub</a> for full source.</p>
+                    <h2>Project Documentation</h2> 
+                    <br>
+                    <p>I quickly realised just how much content I can add onto this website,
+                        If i choose to, so I decided to keep it simple and not add too much.
+                        I have unintentionally created a personal website that can be used to display
+                        my work too. I didn't think I'd end up with a safe space on the internet,
+                        but here we are.
+
+                        I am not actually expecting anyone to go through all of this, because it's so personal
+                        I can compare it to the same as getting to know someone. Everyone is different, and our curiosities
+                        towards people are different too. If there's something here that can resonate with you, then i am glad.
+                    </p>
+
+                </div>
             </div>
         </div>
 
@@ -297,13 +355,24 @@
         <!-- In a window-content for a hidden file -->
         <div id="hidden_note" class="window file-window">
             <div class="window-header" data-drag-handle>
-                <span>.hidden_note</span>
+                <span>.things_i_cant_admit</span>
                 <button class="close-btn" onclick="closeWindow('hidden_note')">X</button>
             </div>
             <div class="window-content">
-                <h2>.hidden_note</h2>
+                <h2>.things_i_cant_admit</h2>
                 <p>
-                    If you found this, you’re as curious as I am
+                    If you found this, you’ve better eyesight than I do.
+                    <br>
+                    <ul>
+                        <li>
+                            making this website, i kept adding useless features
+                            because i didnt want to actually add content about myself
+                        </li>
+                        <li>
+                            my sense of self is weakkk, any confidence i have comes from 
+                            the validation i've gotten for my art
+                        </li>
+                    </ul>
                 </p>
             </div>
         </div>
@@ -317,16 +386,17 @@
             <div class="window-content">
                 <div class="recycle-bin-grid" id="recycle-bin-files">
                     <div class="recycle-item">
-                        <img src="images/text_file.png" alt="old_sketch.png">
-                        <p>old_sketch.png</p>
+                        <img src="images/program.png" alt="old_sketch.png">
+                        <p>20231019.png</p>
                     </div>
                     <div class="recycle-item">
                         <img src="images/text_file.png" alt="draft.txt">
-                        <p>draft.txt</p>
+                        <p>social_link_
+                            failures.pdf</p>
                     </div>
                     <div class="recycle-item">
                         <img src="images/music.png" alt="unused_song.mp3">
-                        <p>unused_song.mp3</p>
+                        <p>voicememo_01.wav</p>
                     </div>
                 </div>
                 <button onclick="emptyRecycleBin()">Empty Recycle Bin
@@ -343,7 +413,7 @@
             </div>
             <div class="window-content">
                 <img src="images/memory1.jpg" alt="Memory 1" class="displayed-image">
-                <p class="image-caption">A day at the park</p>
+                <p class="image-caption">Rain's birthday pancakes</p>
             </div>
         </div>
 
@@ -355,7 +425,9 @@
             </div>
             <div class="window-content">
                 <img src="images/memory2.jpg" alt="Memory 2" class="displayed-image">
-                <p class="image-caption">Graduation</p>
+                <p class="image-caption">thank you for staying with me
+                    to take a moon pic for 15 minutes
+                </p>
             </div>
         </div>
 
@@ -367,7 +439,7 @@
             </div>
             <div class="window-content">
                 <img src="images/memory3.jpg" alt="Memory 3" class="displayed-image">
-                <p class="image-caption">Family trip</p>
+                <p class="image-caption">matching !</p>
             </div>
         </div>
 
@@ -379,7 +451,7 @@
             </div>
             <div class="window-content">
                 <img src="images/memory4.jpg" alt="Memory 4" class="displayed-image">
-                <p class="image-caption">Yummy Food</p>
+                <p class="image-caption">shuake travel buddies</p>
             </div>
         </div>
 
@@ -391,10 +463,33 @@
             </div>
             <div class="window-content">
                 <img src="images/memory5.jpg" alt="Memory 5" class="displayed-image">
-                <p class="image-caption">Yummy Food2</p>
+                <p class="image-caption">paris was cute</p>
             </div>
         </div>
 
+        <!-- Memory 6 Window -->
+        <div id="memory6" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory6.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory6')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory6.jpg" alt="Memory 6" class="displayed-image">
+                <p class="image-caption">20 year old plushie</p>
+            </div>
+        </div>
+
+        <!-- Memory 7 Window -->
+        <div id="memory7" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory7.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory7')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory7.jpg" alt="Memory 7" class="displayed-image">
+                <p class="image-caption">on my birthday, july 3rd 2009</p>
+            </div>
+        </div>
     </div>
     <div class="taskbar" id="taskbar">
         <div class="taskbar-left">
@@ -404,7 +499,7 @@
                     <div class="dropup submenu">
                         <button class="dropbtn">Contact ▸</button>
                         <div class="dropup-content">
-                            <a href="mailto:your@email.com">Email</a>
+                            <a href="mailto:incuee@email.com">Email</a>
                             <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
                             <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
                         </div>
@@ -466,7 +561,7 @@
         <div class="modal-content">
             <h3>Enter Password</h3>
             <input type="password" id="password-input" placeholder="Enter password">
-            <button onclick="submitPassword('file4', 'mypassword')">Submit</button>
+            <button onclick="submitPassword('file4', 'July2004')">Submit</button>
             <button onclick="closePasswordPrompt()">Cancel</button>
         </div>
     </div>

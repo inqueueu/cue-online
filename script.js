@@ -285,3 +285,17 @@ function emptyRecycleBin() {
 function openMemory(id) {
     openWindow(id);
 }
+
+function showNotesTab(tabId) {
+    // Hide all tab contents
+    document.querySelectorAll('#notes\\.txt .tab-content').forEach(tab => {
+        tab.style.display = 'none';
+    });
+    // Remove active class from all buttons
+    document.querySelectorAll('#notes\\.txt .tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Show selected tab and activate button
+    document.getElementById(tabId).style.display = 'block';
+    event.target.classList.add('active');
+}
