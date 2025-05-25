@@ -17,10 +17,19 @@
 
 
     <div class="desktop">
-        <!-- Folder 1 Icon -->
-        <div class="icon" onclick="openWindow('folder1')">
-            <img src="images/folder_open.png" alt="Folder">
-            <p>Folder 1</p>
+        <div class="icon-row">
+            <!-- Folder 1 Icon -->
+            <div class="icon" onclick="openWindow('art-folder')">
+                <img src="images/folder_open.png" alt="Art Folder">
+                <p>Art</p>
+            </div>
+
+
+            <!-- Recycle Bin Icon  -->
+            <div class="icon" onclick="openWindow('recycle-bin')">
+                <img src="images/recycle_bin.png" alt="Recycle Bin">
+                <p>Recycle Bin</p>
+            </div>
         </div>
 
         <!-- Image 1 Icon -->
@@ -30,45 +39,46 @@
         </div>
 
         <!-- Video 1 Icon -->
-        <div class="icon" onclick="openWindow('video1')">
+        <!--<div class="icon" onclick="openWindow('video1')">
             <img src="images/text_file.png" alt="Video File">
             <p>Video 1</p>
-        </div>
+        </div>-->
 
-        <!--folder 1-->
-        <div id="folder1" class="window">
+        <div id="art-folder" class="window file-window">
             <div class="window-header" data-drag-handle>
-                <span>Folder 1</span>
-                <button class="close-btn" onclick="closeWindow('folder1')">X</button>
+                <span>Art Folder</span>
+                <button class="close-btn" onclick="closeWindow('art-folder')">X</button>
             </div>
             <div class="window-content">
-                <!-- File 2 Icon in Folder 1 -->
-                <div class="icon" onclick="openWindow('file2')">
-                    <img src="images/text_file.png" alt="File">
-                    <p>File 2</p>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showArtTab('sketches')">Sketches</button>
+                    <button class="tab-btn" onclick="showArtTab('unfinished')">Unfinished</button>
+                    <button class="tab-btn" onclick="showArtTab('completed')">Completed</button>
                 </div>
-
-                <!-- File 3 Icon in Folder 1 -->
-                <div class="file" onclick="openWindow('file3')">
-                    <div class="icon">
-                        <img src="images/text_file.png" alt="File">
-                        <p>File 3</p>
+                <div id="sketches" class="tab-content" style="display: block;">
+                    <div class="art-gallery">
+                        <img src="images/sketch1.jpg" alt="Sketch 1">
+                        <img src="images/sketch2.jpg" alt="Sketch 2">
+                        <img src="images/sketch3.jpg" alt="Sketch 3">
+                        <!-- Add more sketches as needed -->
                     </div>
                 </div>
-
-                <!-- File 4 Icon in Folder 1 -->
-                <div class="icon" onclick="openWindow('file4')">
-                    <img src="images/text_file.png" alt="File">
-                    <p>File 4</p>
+                <div id="unfinished" class="tab-content" style="display: none;">
+                    <div class="art-gallery">
+                        <img src="images/unfinished1.jpg" alt="Unfinished 1">
+                        <img src="images/unfinished2.jpg" alt="Unfinished 2">
+                        <img src="images/unfinished3.jpg" alt="Unfinished 3">
+                        <!-- Add more unfinished as needed -->
+                    </div>
                 </div>
-
-                <!-- File 5 Icon in Folder 1 -->
-                <div class="icon" onclick="openWindow('file5')">
-                    <img src="images/text_file.png" alt="File">
-                    <p>File 5</p>
+                <div id="completed" class="tab-content" style="display: none;">
+                    <div class="art-gallery">
+                        <img src="images/completed1.jpg" alt="Completed 1">
+                        <img src="images/completed2.jpg" alt="Completed 2">
+                        <img src="images/completed3.jpg" alt="Completed 3">
+                        <!-- Add more completed as needed -->
+                    </div>
                 </div>
-            </div>
-            <div class="window-content">
             </div>
         </div>
 
@@ -92,67 +102,40 @@
                 <div id="about-this" class="tab-content" style="display: block;">
                     <h2>About This Project</h2>
                     <p>
-                        The project is open source, and was inspired by
+                        This project was inspired by
                         <a href="https://www.are.na/vaiva-staugaityte/websites-that-look-like-operating-systems">
-                            websites that look like operating systems</a>.
+                            websites that look like operating systems</a>, and you can view
+                            the code on my <a href="https://github.com/inqueueu/cue-online">github!</a>
                     </p>
                     <p>
                         <strong>Technologies Used:</strong>
                     </p>
                     <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript (ES6+)</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
                     </ul>
                     <p>
-                        Thank you for checking out this project. Don't be afraid to explore!
+                        Thank you for checking out this project. 
                     </p>
                 </div>
                 <div id="about-me" class="tab-content" style="display: none;">
                     <h2>About Me</h2>
                     <p>
-                        Hi! I'm [Your Name], a creative coder and digital explorer. I love making playful, interactive things on the web and learning new ways to express myself through technology and art.
+                        Hi! I'm Leura (or Cue on the internet), a 20 year digital artist and currently a student. 
+                        My interests include: Illustration and design, animation, cute clothes, literary tropes,
+                        video games as an art form, fandom as methodology and I have a newfound interest in coding.
                     </p>
                     <p>
-                        When I'm not coding, you might find me drawing, taking photos, or listening to music. I value curiosity, kindness, and a sense of wonder.
+                        When I'm not drawing, you might find me doing side quests, playing games, attempt to code or 
+                        taking a nap. I admire curiosity, and kindess in others- people who care deeply, whether about ideas, art, or the world around them. 
+                        What matters most to me isn’t that we agree on everything, but that we’re both willing to learn, share passions, and put genuine effort into 
+                        the things (and people) we love.
                     </p>
                 </div>
             </div>
         </div>
 
-        <!-- File 2 Window -->
-        <div id="file2" class="window file-window">
-            <div class="window-header" data-drag-handle>
-                <span>File 2</span>
-                <button class="close-btn" onclick="closeWindow('file2')">X</button>
-            </div>
-            <div class="window-content">
-                <h2>Who Am I?</h2>
-                <p>
-                    I'm a creative explorer, always curious about how things work and how stories can be told through technology. I love blending art and code to make playful, meaningful experiences.
-                </p>
-                <p>
-                    My favorite hobbies include digital drawing, photography, and tinkering with web projects like this one!
-                </p>
-            </div>
-        </div>
-
-        <!-- File 3 Window -->
-        <div id="file3" class="window file-window">
-            <div class="window-header" data-drag-handle>
-                <span>File 3</span>
-                <button class="close-btn" onclick="closeWindow('file3')">X</button>
-            </div>
-            <div class="window-content">
-                <h2>My Values</h2>
-                <ul>
-                    <li>Curiosity: Always learning, always asking questions.</li>
-                    <li>Creativity: Finding new ways to express myself.</li>
-                    <li>Empathy: Listening and caring about others' stories.</li>
-                    <li>Resilience: Bouncing back and growing from challenges.</li>
-                </ul>
-            </div>
-        </div>
 
         <!-- File 4 Icon (Password Protected) -->
         <div class="icon" onclick="openWindowWithPassword('file4', 'mypassword')">
@@ -169,7 +152,7 @@
             <div class="window-content" id="file4-content" style="display: none;">
                 <h2>Secret??</h2>
                 <p>
-                    
+
                 </p>
                 <p>
                     (You found the secret!)
@@ -211,7 +194,7 @@
 
 
         <!--video 1-->
-        <div id="video1" class="window image-window">
+        <!--<div id="video1" class="window image-window">
             <div class="window-header" data-drag-handle>
                 <span>image.jpg</span>
                 <button class="close-btn" onclick="closeWindow('video1')">X</button>
@@ -223,7 +206,9 @@
                     <p class="image-caption">hello world</p>
                 </video>
             </div>
-        </div>
+        </div>-->
+
+
 
         <!-- Music Player Icon -->
         <div class="icon" onclick="openWindow('music')">
@@ -234,17 +219,18 @@
         <!-- Playlist Music Player Window -->
         <div id="music" class="window">
             <div class="window-header" data-drag-handle>
-                <span>recent faves!</span>
+                <span>Music</span>
                 <button class="close-btn" onclick="closeWindow('music')">X</button>
             </div>
             <div class="window-content">
-                <video class="music-visualizer" src="videos/music-visualizer.mp4" autoplay loop muted playsinline></video>
+                <video class="music-visualizer" src="videos/music-visualizer.mp4" autoplay loop muted
+                    playsinline></video>
                 <audio id="playlist-audio" controls>
                     <source src="music/song1.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
                 </audio>
                 <div id="playlist">
-                    <p>Playlist</p>
+                    <p>Recent Faves!</p>
                     <ul>
                         <li>
                             <button onclick="playSong('music/Woaini.mp3', 'Cody Lee')">▶</button>
@@ -258,9 +244,12 @@
                             <button onclick="playSong('music/Multo.mp3', 'Cup of Joe')">▶</button>
                             Multo by Cup of Joe
                         </li>
+                        <li><button onclick="playSong('music/Color Your Night.mp3', 'Lotus Juice')">▶</button>
+                            Color Your Night by Lotus Juice
+                        </li>
                     </ul>
                 </div>
-                <p id="now-playing">Now Playing: Song One 🎵</p>
+                <p id="now-playing">Now Playing: Silence </p>
             </div>
         </div>
 
@@ -281,15 +270,15 @@
         </div>
 
         <div class="icon" onclick="openWindow('todo.txt')">
-    <img src="images/text_file.png" alt="todo">
-    <p>todo.txt</p>
-</div>
+            <img src="images/text_file.png" alt="todo">
+            <p>todo.txt</p>
+        </div>
 
         <!-- Hidden Note Icon -->
         <div class="icon" onclick="openWindow('hidden_note')" style="opacity:0.1; position:absolute; top:80vh;">
-    <img src="images/text_file.png" alt="Hidden">
-    <p>.hidden_note</p>
-</div>
+            <img src="images/text_file.png" alt="Hidden">
+            <p>.hidden_note</p>
+        </div>
 
         <!-- In a window-content for a hidden file -->
         <div id="hidden_note" class="window file-window">
@@ -300,8 +289,33 @@
             <div class="window-content">
                 <h2>.hidden_note</h2>
                 <p>
-                    If you found this, you’re as curious as I am! 🌱
+                    If you found this, you’re as curious as I am
                 </p>
+            </div>
+        </div>
+
+        <!-- Recycle Bin Window -->
+        <div id="recycle-bin" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>Recycle Bin</span>
+                <button class="close-btn" onclick="closeWindow('recycle-bin')">X</button>
+            </div>
+            <div class="window-content">
+                <div class="recycle-bin-grid" id="recycle-bin-files">
+                    <div class="recycle-item">
+                        <img src="images/text_file.png" alt="old_sketch.png">
+                        <p>old_sketch.png</p>
+                    </div>
+                    <div class="recycle-item">
+                        <img src="images/text_file.png" alt="draft.txt">
+                        <p>draft.txt</p>
+                    </div>
+                    <div class="recycle-item">
+                        <img src="images/music.png" alt="unused_song.mp3">
+                        <p>unused_song.mp3</p>
+                    </div>
+                </div>
+                <button onclick="emptyRecycleBin()">Empty Recycle Bin</button>
             </div>
         </div>
 
@@ -322,32 +336,48 @@
                     <div class="dropup submenu">
                         <button class="dropbtn">Favorite Media ▸</button>
                         <div class="dropup-content">
-                            <a href="https://open.spotify.com/" target="_blank">Spotify Playlist</a>
-                            <a href="https://letterboxd.com/" target="_blank">Letterboxd</a>
-                            <a href="#">Book: "The Little Prince"</a>
+                            <a href="#">The Little Prince</a>
+                            <a href="#">Princess Jellyfish</a>
+                            <a href="#">Persona 5</a>
+                            <a href="#">Baldur's Gate 3</a>
+                            <a href="#">Alien Stage</a>
+                            <a href="#">Dungeon Meshi</a>
+                            <a href="#">Frieren</a>
+                            <a href="#">Professor Layton</a>
+                            <a href="#">Fire Emblem</a>
+                            <a href="#">Vocaloid</a>
+                            <a href="#">Animal Crossing</a>
+                            <a href="#">Zelda</a>
+                            <a href="#">Disco Elysium</a>
                         </div>
                     </div>
                     <div class="dropup submenu">
                         <button class="dropbtn">Interests ▸</button>
                         <div class="dropup-content">
-                            <a href="#">Web Art</a>
-                            <a href="#">Photography</a>
-                            <a href="#">Retro Tech</a>
-                            <a href="#">Drawing</a>
+                            <a href="#">Digital art</a>
+                            <a href="#">Coding</a>
+                            <a href="#">Videogame morality</a>
+                            <a href="#">RPGS/CRPGS</a>
                         </div>
                     </div>
                     <div class="dropup submenu">
                         <button class="dropbtn">Thinking About ▸</button>
                         <div class="dropup-content">
-                            <a href="#">How to make websites feel alive</a>
-                            <a href="#">What makes a memory stick?</a>
-                            <a href="#">Why cats are so mysterious</a>
+                            <a href="#">How cool the internet is</a>
+                            <a href="#">Curry</a>
+                            <a href="#">Next cafe trip</a>
+                            <a href="#">Botulism</a>
+                            <a href="#">Video game back log</a>
+                            <a href="#">How I can reward myself with Monster Hunter soon</a>
+                            <a href="#">Curry</a>
+                            <a href="#">Next cafe trip</a>
+                            <a href="#">Botulism</a>
+                            <a href="#">video game back log</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="taskbar-items">
-                <!--taskbar items here-->
+            <div class="taskbar-items" id="taskbar-items">
             </div>
         </div>
         <div class="time">
@@ -355,7 +385,7 @@
         </div>
     </div>
 
-    <!-- Password Prompt Modal -->
+    <!-- Password Prompt  -->
     <div id="password-prompt" class="modal" style="display: none;">
         <div class="modal-content">
             <h3>Enter Password</h3>

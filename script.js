@@ -1,5 +1,8 @@
 // List of all file IDs
-const fileIds = ['file1', 'file2', 'file3', 'file4'];
+const fileIds = [
+    'art-folder', 'file1', 'file2', 'file3', 'file4', 'file5',
+    'image1', 'video1', 'music', 'todo.txt', 'hidden_note'
+];
 
 // Track open files
 const openFiles = new Set();
@@ -21,6 +24,7 @@ function openWindow(id) {
     }
 
     windowElement.style.display = 'flex';
+    windowElement.style.zIndex = 2001; // bring to front
 
     // Add the file to the openFiles set
     if (fileIds.includes(id)) {
@@ -40,23 +44,37 @@ function openWindow(id) {
         };
     }
 
-    // Add the file to the taskbar if not already present
-    const taskbarItems = document.querySelector('.taskbar-items');
-    if (!document.getElementById(`taskbar-${id}`)) {
-        const taskbarItem = document.createElement('div');
-        taskbarItem.id = `taskbar-${id}`;
-        taskbarItem.className = 'taskbar-item';
-        taskbarItem.textContent = id; // Display the window ID in the taskbar
-        taskbarItem.onclick = () => {
-            windowElement.style.display = 'flex';
-        };
-        taskbarItems.appendChild(taskbarItem);
-    }
+    renderTaskbarItems();
 }
 
-function openWindow(id) {
-    document.getElementById(id).style.display = 'block';
-    // Optionally bring to front, etc.
+function closeWindow(id) {
+    const windowElement = document.getElementById(id);
+    if (!windowElement) return;
+
+    windowElement.style.display = 'none';
+    openFiles.delete(id);
+    renderTaskbarItems();
+}
+
+function renderTaskbarItems() {
+    const container = document.getElementById('taskbar-items');
+    container.innerHTML = '';
+    openFiles.forEach(id => {
+        // Use the window's header or fallback to id
+        const win = document.getElementById(id);
+        let label = id;
+        if (win) {
+            const header = win.querySelector('.window-header span');
+            if (header && header.textContent) label = header.textContent;
+        }
+        const btn = document.createElement('button');
+        btn.className = 'taskbar-item';
+        btn.textContent = label;
+        btn.onclick = () => {
+            openWindow(id);
+        };
+        container.appendChild(btn);
+    });
 }
 
 function openWindowWithPassword(id, password) {
@@ -98,29 +116,6 @@ function closePasswordPrompt() {
     passwordInput.value = '';
     const errorDiv = document.getElementById('password-error');
     errorDiv.textContent = '';
-}
-
-function closeWindow(id) {
-    const windowElement = document.getElementById(id);
-    if (windowElement) {
-        windowElement.style.display = 'none';
-        // Reset size to original
-        windowElement.style.width = '';
-        windowElement.style.height = '';
-        windowElement.style.minWidth = '';
-        windowElement.style.maxWidth = '';
-        windowElement.style.minHeight = '';
-        windowElement.style.maxHeight = '';
-    }
-
-    // Remove the file from the openFiles set
-    openFiles.delete(id);
-
-    // Remove the file from the taskbar
-    const taskbarItem = document.getElementById(`taskbar-${id}`);
-    if (taskbarItem) {
-        taskbarItem.remove();
-    }
 }
 
 // Ensure all windows are hidden on page load
@@ -237,6 +232,20 @@ function showAboutTab(tabId) {
     document.querySelectorAll('#file1 .tab-btn')[btnIndex].classList.add('active');
 }
 
+function showArtTab(tabId) {
+    document.querySelectorAll('#art-folder .tab-content').forEach(tab => {
+        tab.style.display = 'none';
+    });
+    document.querySelectorAll('#art-folder .tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(tabId).style.display = 'block';
+    // Set active button
+    const btns = Array.from(document.querySelectorAll('#art-folder .tab-btn'));
+    const tabNames = ['sketches', 'unfinished', 'completed'];
+    btns[tabNames.indexOf(tabId)].classList.add('active');
+}
+
 function toggleStartMenu() {
     const menu = document.getElementById('startMenu');
     menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
@@ -263,3 +272,9 @@ document.addEventListener('click', function(e) {
         }
     });
 });
+
+// Move this OUTSIDE any other function!
+function emptyRecycleBin() {
+    const bin = document.getElementById('recycle-bin-files');
+    bin.innerHTML = '<div style="grid-column: 1 / -1; text-align:center; color:#888;"><em>The Recycle Bin is empty.</em></div>';
+}
