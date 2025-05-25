@@ -14,7 +14,7 @@
 
 .loadingScreen {
     position: absolute;
-    z-index: 5;
+    z-index: 7000;
     width: 100%;
     height: 100vh;
     background-color: white;
@@ -682,7 +682,8 @@ audio {
 
 .art-gallery img {
     width: 100%;
-    height: 200px; /* Fixed height for uniformity */
+    min-width: 100px;
+    height: 100%; /* Fixed height for uniformity */
     object-fit: cover;
     background: #f3f3f3;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
