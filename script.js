@@ -1,7 +1,8 @@
 // List of all file IDs
 const fileIds = [
     'art-folder', 'file1', 'file2', 'file3', 'file4', 'file5',
-    'image1', 'video1', 'music', 'todo.txt', 'hidden_note'
+    'image1', 'video1', 'music', 'notes.txt', 'hidden_note' , 
+    'recycle-bin', 'about', 'memory1', 'memory2', 'memory3', 'memory4', 'memory5',
 ];
 
 // Track open files
@@ -279,4 +280,8 @@ function emptyRecycleBin() {
     // Change the recycle bin icon to empty
     const binIcon = document.getElementById('recycle-bin-icon');
     if (binIcon) binIcon.src = 'images/recycle_bin_empty.png';
+}
+
+function openMemory(id) {
+    openWindow(id);
 }

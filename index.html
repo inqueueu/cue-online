@@ -17,33 +17,24 @@
 
 
     <div class="desktop">
-        <div class="icon-row">
-            <!-- Art Folder Icon -->
-            <div class="icon" onclick="openWindow('art-folder')">
-                <img src="images/folder_open.png" alt="Art Folder">
-                <p>Art</p>
-            </div>
-
-
-            <!-- Recycle Bin Icon  -->
-            <div class="icon" onclick="openWindow('recycle-bin')">
-                <img id="recycle-bin-icon" src="images/recycle_bin_full.png" alt="Recycle Bin">
-                <p>Recycle Bin</p>
-            </div>
+        <!-- Art Folder Icon -->
+        <div class="icon" onclick="openWindow('art-folder')">
+            <img src="images/folder_open.png" alt="Art Folder">
+            <p>Art</p>
         </div>
-
+        <!-- Memories Folder Icon -->
+        <div class="icon" onclick="openWindow('memories-folder')">
+            <img src="images/folder_open.png" alt="Memories Folder">
+            <p>Memories</p>
+        </div>
         <!-- Image 1 Icon -->
         <div class="icon" onclick="openWindow('image1')">
             <img src="images/program.png" alt="Image File">
             <p>Image 1</p>
         </div>
+        
 
-        <!-- Video 1 Icon -->
-        <!--<div class="icon" onclick="openWindow('video1')">
-            <img src="images/text_file.png" alt="Video File">
-            <p>Video 1</p>
-        </div>-->
-
+        <!-- Art Folder Window -->
         <div id="art-folder" class="window file-window">
             <div class="window-header" data-drag-handle>
                 <span>Art Folder</span>
@@ -82,6 +73,39 @@
             </div>
         </div>
 
+        <!-- Memories Folder Window -->
+        <div id="memories-folder" class="window file-window">
+            <div class="window-header" data-drag-handle>
+                <span>Memories</span>
+                <button class="close-btn" onclick="closeWindow('memories-folder')">X</button>
+            </div>
+            <div class="window-content">
+                <div class="memories-gallery">
+                    <div class="memory-thumb" onclick="openMemory('memory1')">
+                        <img src="images/memory1.jpg" alt="Memory 1">
+                        <p>A day at the park</p>
+                    </div>
+                    <div class="memory-thumb" onclick="openMemory('memory2')">
+                        <img src="images/memory2.jpg" alt="Memory 2">
+                        <p>Graduation</p>
+                    </div>
+                    <div class="memory-thumb" onclick="openMemory('memory3')">
+                        <img src="images/memory3.jpg" alt="Memory 3">
+                        <p>Family trip</p>
+                    </div>
+                    <div class="memory-thumb" onclick="openMemory('memory4')">
+                        <img src="images/memory4.jpg" alt="Memory 4">
+                        <p>Yummy Food</p>
+                    </div>
+                    <div class="memory-thumb" onclick="openMemory('memory5')">
+                        <img src="images/memory5.jpg" alt="Memory 5">
+                        <p>Yummy Food</p>
+                    </div>
+                    <!-- Add more memories as needed -->
+                </div>
+            </div>
+        </div>
+
         <!-- About Icon -->
         <div class="icon" onclick="openWindow('file1')">
             <img src="images/this-computer.png" alt="File">
@@ -116,20 +140,20 @@
                         <li>JavaScript</li>
                     </ul>
                     <p>
-                        Thank you for checking out this project. 
+                        Thank you for checking out this project.
                     </p>
                 </div>
                 <div id="about-me" class="tab-content" style="display: none;">
                     <h2>About Me</h2>
                     <p>
-                        Hi! I'm Leura (or Cue on the internet), a 20 year digital artist and currently a student. 
+                        Hi! I'm Leura (or Cue on the internet), a 20 year digital artist and currently a student.
                         My interests include: Illustration and design, animation, cute clothes, literary tropes,
                         video games as an art form, fandom as methodology and I have a newfound interest in coding.
                     </p>
                     <p>
-                        When I'm not drawing, you might find me doing side quests, playing games, attempt to code or 
-                        taking a nap. I admire curiosity, and kindess in others- people who care deeply, whether about ideas, art, or the world around them. 
-                        What matters most to me isn’t that we agree on everything, but that we’re both willing to learn, share passions, and put genuine effort into 
+                        When I'm not drawing, you might find me doing side quests, playing games, attempt to code or
+                        taking a nap. I admire curiosity, and kindess in others- people who care deeply, whether about ideas, art, or the world around them.
+                        What matters most to me isn’t that we agree on everything, but that we’re both willing to learn, share passions, and put genuine effort into
                         the things (and people) we love.
                     </p>
                 </div>
@@ -238,13 +262,13 @@
         </div>
 
         <!-- In a window-content for a text file -->
-        <div id="todo.txt" class="window file-window">
+        <div id="notes.txt" class="window file-window">
             <div class="window-header" data-drag-handle>
-                <span>todo.txt</span>
-                <button class="close-btn" onclick="closeWindow('todo.txt')">X</button>
+                <span>notes.txt</span>
+                <button class="close-btn" onclick="closeWindow('notes.txt')">X</button>
             </div>
             <div class="window-content">
-                <h2>todo.txt</h2>
+                <h2>notes.txt</h2>
                 <ul>
                     <li>Finish self-representation project</li>
                     <li>Call grandma</li>
@@ -253,9 +277,15 @@
             </div>
         </div>
 
-        <div class="icon" onclick="openWindow('todo.txt')">
-            <img src="images/text_file.png" alt="todo">
-            <p>todo.txt</p>
+        <div class="icon" onclick="openWindow('notes.txt')">
+            <img src="images/notepad.png" alt="todo">
+            <p>Notes</p>
+        </div>
+
+                <!-- Recycle Bin Icon  -->
+        <div class="icon" onclick="openWindow('recycle-bin')">
+            <img id="recycle-bin-icon" src="images/recycle_bin_full.png" alt="Recycle Bin">
+            <p>Recycle Bin</p>
         </div>
 
         <!-- Hidden Note Icon -->
@@ -300,8 +330,68 @@
                     </div>
                 </div>
                 <button onclick="emptyRecycleBin()">Empty Recycle Bin
-                    
+
                 </button>
+            </div>
+        </div>
+
+        <!-- Memory 1 Window -->
+        <div id="memory1" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory1.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory1')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory1.jpg" alt="Memory 1" class="displayed-image">
+                <p class="image-caption">A day at the park</p>
+            </div>
+        </div>
+
+        <!-- Memory 2 Window -->
+        <div id="memory2" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory2.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory2')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory2.jpg" alt="Memory 2" class="displayed-image">
+                <p class="image-caption">Graduation</p>
+            </div>
+        </div>
+
+        <!-- Memory 3 Window -->
+        <div id="memory3" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory3.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory3')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory3.jpg" alt="Memory 3" class="displayed-image">
+                <p class="image-caption">Family trip</p>
+            </div>
+        </div>
+
+        <!-- Memory 4 Window -->
+        <div id="memory4" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory3.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory4')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory4.jpg" alt="Memory 4" class="displayed-image">
+                <p class="image-caption">Yummy Food</p>
+            </div>
+        </div>
+
+        <!-- Memory 5 Window -->
+        <div id="memory5" class="window image-window">
+            <div class="window-header" data-drag-handle>
+                <span>memory5.jpg</span>
+                <button class="close-btn" onclick="closeWindow('memory5')">X</button>
+            </div>
+            <div class="window-content">
+                <img src="images/memory5.jpg" alt="Memory 5" class="displayed-image">
+                <p class="image-caption">Yummy Food2</p>
             </div>
         </div>
 

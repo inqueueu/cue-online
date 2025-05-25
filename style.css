@@ -34,11 +34,12 @@ body {
 
 .desktop {
     display: grid;
+    grid-template-rows: repeat(5, min-content); /* 5 icons per column */
     grid-auto-flow: column;
-    grid-template-rows: repeat(6, min-content); /* 4 icons per column */
-    gap: 10px 32px; /* row gap, column gap */
-    padding: 15px;
+    gap: 16px 48px; /* row gap, column gap */
+    padding: 24px;
     align-items: start;
+    justify-content: start;
 }
 
 .icon-row {
@@ -76,7 +77,10 @@ body {
 }
 
 .desktop > .icon p {
-    color: #fff;
+    margin: 8px 0 0 0;
+    color: var(--quaternary-root);
+    font-size: 1em;
+    text-align: center;
 }
 
 .window {
@@ -720,4 +724,36 @@ audio {
     object-fit: contain;
     filter: grayscale(0.3);
     opacity: 0.85;
+}
+
+.memories-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 18px;
+    margin: 20px 0;
+    justify-items: center;
+}
+.memory-thumb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+.memory-thumb img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.memory-thumb:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.memory-thumb p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #444;
 }
