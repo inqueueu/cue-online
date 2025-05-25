@@ -18,7 +18,7 @@
 
     <div class="desktop">
         <div class="icon-row">
-            <!-- Folder 1 Icon -->
+            <!-- Art Folder Icon -->
             <div class="icon" onclick="openWindow('art-folder')">
                 <img src="images/folder_open.png" alt="Art Folder">
                 <p>Art</p>
@@ -27,7 +27,7 @@
 
             <!-- Recycle Bin Icon  -->
             <div class="icon" onclick="openWindow('recycle-bin')">
-                <img src="images/recycle_bin.png" alt="Recycle Bin">
+                <img id="recycle-bin-icon" src="images/recycle_bin_full.png" alt="Recycle Bin">
                 <p>Recycle Bin</p>
             </div>
         </div>
@@ -157,22 +157,6 @@
                 <p>
                     (You found the secret!)
                 </p>
-            </div>
-        </div>
-
-        <!-- File 5 Window -->
-        <div id="file5" class="window file-window">
-            <div class="window-header" data-drag-handle>
-                <span>File 5</span>
-                <button class="close-btn" onclick="closeWindow('file5')">X</button>
-            </div>
-            <div class="window-content">
-                <h2>Fun Facts</h2>
-                <ul>
-                    <li>I collect interesting fonts and textures.</li>
-                    <li>I love rainy days and cozy playlists.</li>
-                    <li>My favorite programming language is JavaScript (for now!).</li>
-                </ul>
             </div>
         </div>
 
@@ -315,7 +299,9 @@
                         <p>unused_song.mp3</p>
                     </div>
                 </div>
-                <button onclick="emptyRecycleBin()">Empty Recycle Bin</button>
+                <button onclick="emptyRecycleBin()">Empty Recycle Bin
+                    
+                </button>
             </div>
         </div>
 

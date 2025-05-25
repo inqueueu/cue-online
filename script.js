@@ -273,8 +273,10 @@ document.addEventListener('click', function(e) {
     });
 });
 
-// Move this OUTSIDE any other function!
 function emptyRecycleBin() {
     const bin = document.getElementById('recycle-bin-files');
     bin.innerHTML = '<div style="grid-column: 1 / -1; text-align:center; color:#888;"><em>The Recycle Bin is empty.</em></div>';
+    // Change the recycle bin icon to empty
+    const binIcon = document.getElementById('recycle-bin-icon');
+    if (binIcon) binIcon.src = 'images/recycle_bin_empty.png';
 }
